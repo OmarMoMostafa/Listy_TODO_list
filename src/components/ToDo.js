@@ -1,11 +1,45 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import ProfilePage from "./ProfilePage";
 import TaskList from "./TaskList";
+import { getProfile } from "../utilities/helpers";
+import { setProfile } from "../appState/profileSlice";
 
 const ToDo = () => {
   const [isHidden, setIsHidden] = useState(false);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const userProfile = useSelector((state) => state.profile);
+  const token = localStorage.getItem("user-token");
 
   useEffect(() => {
+    const profileReq = async () => {
+      if (Object.keys(userProfile).length === 0) {
+        if (!token) {
+          navigate("/sign-in", { replace: true });
+        } else {
+          try {
+            // get profile data
+            const res = await getProfile(token);
+            if (res.error) {
+              navigate("/sign-in", { replace: true });
+            }
+            dispatch(setProfile(res.user));
+          } catch (e) {
+            navigate("/sign-in", { replace: true });
+          }
+        }
+      }
+    };
+    profileReq();
+  }, []);
+
+  useEffect(() => {
+    if (window.innerWidth < 768) {
+      setIsHidden(true);
+    }
     const handleResize = () => {
       if (window.innerWidth < 768) {
         setIsHidden(true);

@@ -1,15 +1,22 @@
-import ProfilePage from "./components/ProfilePage";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import NotFoundPage from "./components/NotFound";
+import Notification from "./components/Notification";
 import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
 import ToDo from "./components/ToDo";
-// import TodoList from "./components/TaskList";
 
 function App() {
   return (
     <div className="App">
-      {/* <SignIn /> */}
-      {/* <SignUp /> */}
-      <ToDo />
+      <Notification />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<ToDo />} />
+          <Route path="sign-in" element={<SignIn />} />
+          <Route path="sign-up" element={<SignUp />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
