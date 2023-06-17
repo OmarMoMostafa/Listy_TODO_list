@@ -1,4 +1,4 @@
 import axios from "axios";
 export const requestInstance = axios.create({
-  baseURL: "http://localhost:8000/",
+  baseURL: "https://task-manager-api-1ona.onrender.com/",
 });
