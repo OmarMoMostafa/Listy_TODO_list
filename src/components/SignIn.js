@@ -35,6 +35,7 @@ function SignIn() {
         fetchProfile();
       }
     }
+    // eslint-disable-next-line
   }, []);
 
   const handleSubmit = async (event) => {

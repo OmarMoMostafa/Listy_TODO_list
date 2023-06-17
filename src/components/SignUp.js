@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import { FaSpinner } from "react-icons/fa";
 import { setNotification } from "../appState/notificationSlice";
 import { setProfile } from "../appState/profileSlice";
 import { getProfile, signUp } from "../utilities/userHelpers";
@@ -36,6 +35,7 @@ function SignUp() {
         navigate("/", { replace: true });
       }
     }
+    // eslint-disable-next-line
   }, []);
 
   const handleSubmit = async (event) => {
