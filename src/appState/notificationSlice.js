@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-// import { getProfile, signIn, signUp } from "../utilities/helpers";
 
 const initialState = {
   type: "",

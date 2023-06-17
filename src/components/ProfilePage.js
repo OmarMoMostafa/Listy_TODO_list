@@ -14,9 +14,6 @@ const ProfilePage = () => {
   const [isEditMode, setIsEditMode] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  // const [avatar, setAvatar] = useState(
-  //   "https://www.w3schools.com/howto/img_avatar.png"
-  // );
   const [password, setPassword] = useState("");
 
   const userProfile = useSelector((state) => state.profile);
@@ -144,21 +141,6 @@ const ProfilePage = () => {
           ) : (
             <p>{email}</p>
           )}
-
-          {/* {isEditMode && (
-            <div>
-              <input
-                className="w-full"
-                type="file"
-                accept="image/*"
-                // onChange={(e) => {
-                //   const file = e.target.files[0];
-                //   // Perform upload logic here, e.g., using FileReader API
-                //   setAvatar(URL.createObjectURL(file));
-                // }}
-              />
-            </div>
-          )} */}
 
           {isEditMode && (
             <input

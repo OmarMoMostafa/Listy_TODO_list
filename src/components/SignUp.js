@@ -10,7 +10,6 @@ function SignUp() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  // const [pending, setPending] = useState(true);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -52,9 +51,7 @@ function SignUp() {
       return;
     }
     const res = await signUp(name, email, password);
-    // setPending(true);
     if (res.error) {
-      // setPending(false);
       dispatch(
         setNotification({
           type: "error",
@@ -64,7 +61,6 @@ function SignUp() {
       );
       return;
     }
-    // setPending(false);
     dispatch(
       setNotification({
         type: "success",
@@ -76,9 +72,6 @@ function SignUp() {
     localStorage.setItem("user-token", res.token);
     navigate("/", { replace: true });
   };
-
-  const Icon = FaSpinner;
-  // console.log(pending);
 
   return (
     <div className="bg-gray-100 min-h-screen flex flex-col justify-center py-12 sm:px-6 lg:px-8">
@@ -153,7 +146,7 @@ function SignUp() {
                 type="submit"
                 className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary bg-primary-light hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
               >
-                {/* {pending ? <Icon /> : "Sign up"} */}Sign Up
+                Sign Up
               </button>
             </div>
             <div>
