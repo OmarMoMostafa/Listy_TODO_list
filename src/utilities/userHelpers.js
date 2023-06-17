@@ -1,7 +1,5 @@
-import axios from "axios";
-const requestInstance = axios.create({
-  baseURL: "http://localhost:8000/",
-});
+import { requestInstance } from "./axiosConfig";
+
 export const signIn = async (email, password) => {
   try {
     const res = await requestInstance.post("users/login", {

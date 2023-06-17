@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { setNotification } from "../appState/notificationSlice";
 import { setProfile } from "../appState/profileSlice";
-import { getProfile, signIn } from "../utilities/helpers";
+import { getProfile, signIn } from "../utilities/userHelpers";
 // import { fetchProfile, signInReq } from "../appState/profileSlice";
 
 function SignIn() {

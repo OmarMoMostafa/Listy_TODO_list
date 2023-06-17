@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import ProfilePage from "./ProfilePage";
 import TaskList from "./TaskList";
-import { getProfile } from "../utilities/helpers";
+import { getProfile } from "../utilities/userHelpers";
 import { setProfile } from "../appState/profileSlice";
 
 const ToDo = () => {

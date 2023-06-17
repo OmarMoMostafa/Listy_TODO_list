@@ -8,7 +8,7 @@ import {
   SignOut,
   SignOutAll,
   updateProfile,
-} from "../utilities/helpers";
+} from "../utilities/userHelpers";
 
 const ProfilePage = () => {
   const [isEditMode, setIsEditMode] = useState(false);
@@ -130,7 +130,7 @@ const ProfilePage = () => {
               onChange={(e) => setName(e.target.value)}
             />
           ) : (
-            <h2 className="text-xl font-bold">{userProfile?.name}</h2>
+            <h2 className="text-xl font-bold">{name}</h2>
           )}
 
           {isEditMode ? (
@@ -142,7 +142,7 @@ const ProfilePage = () => {
               onChange={(e) => setEmail(e.target.value)}
             />
           ) : (
-            <p>{userProfile?.email}</p>
+            <p>{email}</p>
           )}
 
           {/* {isEditMode && (

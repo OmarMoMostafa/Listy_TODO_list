@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { FaSpinner } from "react-icons/fa";
 import { setNotification } from "../appState/notificationSlice";
 import { setProfile } from "../appState/profileSlice";
-import { getProfile, signUp } from "../utilities/helpers";
+import { getProfile, signUp } from "../utilities/userHelpers";
 
 function SignUp() {
   const [name, setName] = useState("");
